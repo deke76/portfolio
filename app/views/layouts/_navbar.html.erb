@@ -1,0 +1,9 @@
+<header class='navigation-wrapper'>
+  <div class='navbar'>
+    <% @navigation_links.each do |link| %>  
+      <div class='navlink'>
+        <%= embedded_svg(link.file) %>
+      </div>
+    <% end %>
+  </div>
+</header>

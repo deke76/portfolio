@@ -31,10 +31,10 @@ gem "cssbundling-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
+gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-gem "redis", "~> 4.0"
+# gem "kredis"cd ..
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -50,6 +50,12 @@ gem "sassc-rails"
 
 # Use devise for user id & authorization
 gem "devise", "~> 4.9", ">= 4.9.2"
+
+# Use Font-Awesome icons
+gem "font-awesome-sass", "~> 6.4.0"
+
+# Work with XML & HTML files
+gem 'nokogiri', '~> 1.15', '>= 1.15.3'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

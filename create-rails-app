@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# # create the rails directory
+mkdir "$2"
+cd "$2" || { echo "Directory not found."; exit; }
+
+# Variables
+RAILS_PATH=$(PWD)
+APP_PATH="$RAILS_PATH/$1"
+DOCKER_PATH="$HOME/Development/Learning/Docker/Rails"
+
+# run the rails command
+echo "Creating Rails app $1 in $APP_PATH"
+rails new "$1" -j esbuild -c sass -d postgresql
+REDIS_GEM="gem \"redis\", \"~> 4.0\""
+SASSC_GEM="gem \"sassc-rails\"\n\n"
+DEVISE_COMMENT="# Use devise for user id & authorization\n"
+DEVISE_GEM="gem \"devise\", \"~> 4.9\", \">= 4.9.2\""
+
+echo "Updating Gemfile"
+cd "$1" || { echo "Directory not found."; exit; }
+sed '37d;49d' Gemfile > temp
+awk -v"REDIS=$REDIS_GEM" \
+    'NR==37{print REDIS}1' temp > temp2
+rm temp
+awk -v"SASSC=$SASSC_GEM" \
+    -v"COMMENT=$DEVISE_COMMENT" \
+    -v"DEVISE=$DEVISE_GEM" \
+    'NR==49{print SASSC COMMENT DEVISE}1' temp2 > Gemfile
+rm temp2
+bundle install
+
+# copy the docker & environment files
+echo "Copying docker environment files"
+cp "$DOCKER_PATH"/docker-compose.yml "$APP_PATH"
+cp "$DOCKER_PATH"/Dockerfile "$APP_PATH"
+cp ../rails.env "$APP_PATH"
+
+# edit the database config
+echo "Editing the database configuration"
+USERNAME="  username: <%= ENV.fetch(\"POSTGRES_USER\") %>\n"
+PASSWORD="  password: <%= ENV.fetch(\"POSTGRES_PASSWORD\") %>\n"
+HOST="  host: <%= ENV.fetch(\"POSTGRES_HOST\") %>\n"
+PORT="  port: <%= ENV.fetch(\"POSTGRES_PORT\") %>\n"
+
+echo "Writing databse.yml"
+awk -v"USER=$USERNAME" \
+    -v"PASSWORD=$PASSWORD" \
+    -v"HOST=$HOST" \
+    -v"PORT=$PORT" \
+    'NR==23{print USER PASSWORD HOST PORT}1' config/database.yml > config.yml
+rm config/database.yml
+mv config.yml config/database.yml
+
+# run the containers
+echo "Running the containers"
+docker compose up -d

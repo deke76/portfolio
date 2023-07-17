@@ -1,0 +1,8 @@
+.navlink {
+  width: 40%;
+  cursor: pointer;
+  transition: transform;
+  &:hover {
+    transform: scale(1.25);
+  }
+}

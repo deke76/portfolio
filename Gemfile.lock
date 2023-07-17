@@ -98,6 +98,8 @@ GEM
       warden (~> 1.2.3)
     erubi (1.12.0)
     ffi (1.15.5)
+    font-awesome-sass (6.4.0)
+      sassc (~> 2.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -241,8 +243,10 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise (~> 4.9, >= 4.9.2)
+  font-awesome-sass (~> 6.4.0)
   jbuilder
   jsbundling-rails
+  nokogiri (~> 1.15, >= 1.15.3)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.6)
