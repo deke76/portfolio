@@ -1,0 +1,25 @@
+@mixin skew($side: right, $deg: -20deg, $right: -15px, $left: -15px, $width: 30px, $bg: none) {
+  position: relative;
+
+  &::before {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+
+      @if $side == right {
+          right: $right;
+      }
+      @else if $side == left {
+          left: $left;
+      }
+
+      display: block;
+      width: $width;
+      background: $bg;
+      -webkit-transform: skewX($deg);
+          -ms-transform: skewX($deg);
+              transform: skewX($deg);
+  }
+}

@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def index
-    @navigation_links = NavigationLink.all.order(:order)
+    links = NavigationLink.all
+    puts links.select { |link| !link.parent_id }
+    @navigation_links = NavigationLink.all
   end
 end

@@ -1,34 +1,121 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+User.destroy_all
+User.create([
+  {
+    first_name: 'Darcy',
+    last_name: 'Lauder',
+    email: 'darcy.lauder@shaw.ca'
+  }
+])
+
+NavigationLink.destroy_all
 NavigationLink.create([
   {
-    file: "at-solid.svg",
-    order: 4,
+    user_id: 1,
+    file_name: "at-solid",
+    file_type: "svg",
     description: "Links",
+    container_order: 4,
   },
   {
-    file: "bars-solid.svg",
-    order: 0,
+    user_id: 1,
+    file_name: "bars-solid",
+    file_type: "svg",
     description: "Settings",
+    container_order: 0,
   },
   {
-    file: "circle-info-solid.svg",
-    order: 1,
+    user_id: 1,
+    file_name: "circle-info-solid",
+    file_type: "svg",
     description: "About Me",
+    container_order: 1,
   },
   {
-    file: "envelope-solid.svg",
+    user_id: 1,
+    file_name: "envelope-solid",
+    file_type: "svg",
     description: "Contact Me",
-    order: 3,
+    container_order: 3,
   },
   {
-    file: "puzzle-piece-solid.svg",
+    user_id: 1,
+    file_name: "puzzle-piece-solid",
+    file_type: "svg",
     description: "Projects",
-    order: 2,
+    container_order: 2,
+  },
+  {
+    user_id: 1,
+    file_name: "arrow-right-to-bracket-solid",
+    file_type: "svg",
+    description: "Login",
+    container_order: 0,
+    parent_id: 1,
+  },
+  {
+    user_id: 1,
+    file_name: "paper-plane-solid",
+    file_type: "svg",
+    description: "Email",
+    container_order: 0,
+    parent_id: 4,
+  },
+  {
+    user_id: 1,
+    file_name: "github",
+    file_type: "svg",
+    description: "Github",
+    container_order: 1,
+    parent_id: 5,
+  },
+  {
+    user_id: 1,
+    file_name: "linkedin",
+    file_type: "svg",
+    description: "LinkedIn",
+    container_order: 2,
+    parent_id: 5,
+  },
+  {
+    user_id: 1,
+    file_name: "stack-overflow",
+    file_type: "svg",
+    description: "Stack Overflow",
+    container_order: 3,
+    parent_id: 5,
+  },
+  {
+    user_id: 1,
+    file_name: "magnifying-glass-solid",
+    file_type: "svg",
+    description: "Search",
+    container_order: 0,
+    parent_id: 3,
+  },
+  {
+    user_id: 1,
+    file_name: "question-solid",
+    file_type: "svg",
+    description: "Summary",
+    container_order: 1,
+    parent_id: 3,
+  },
+  {
+    user_id: 1,
+    file_name: "id-badge-solid",
+    file_type: "svg",
+    description: "Contact Form",
+    container_order: 1,
+    parent_id: 4,
+  },
+  {
+    user_id: 1,
+    file_name: "clipboard-user_id-solid",
+    file_type: "svg",
+    description: "Resume",
+    container_order: 1,
+    parent_id: 4,
   }
+
+
 ])

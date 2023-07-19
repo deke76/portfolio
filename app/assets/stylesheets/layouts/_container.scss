@@ -1,3 +1,20 @@
 .container {
   height: 100vh;
+
+  &__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: skewX(-8deg);
+  }
+
+  &__link {
+    
+  }
 }
