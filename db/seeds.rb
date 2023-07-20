@@ -11,13 +11,6 @@ NavigationLink.destroy_all
 NavigationLink.create([
   {
     user_id: 1,
-    file_name: "at-solid",
-    file_type: "svg",
-    description: "Links",
-    container_order: 4,
-  },
-  {
-    user_id: 1,
     file_name: "bars-solid",
     file_type: "svg",
     description: "Settings",
@@ -29,6 +22,13 @@ NavigationLink.create([
     file_type: "svg",
     description: "About Me",
     container_order: 1,
+  },  
+  {
+    user_id: 1,
+    file_name: "puzzle-piece-solid",
+    file_type: "svg",
+    description: "Projects",
+    container_order: 2,
   },
   {
     user_id: 1,
@@ -39,10 +39,10 @@ NavigationLink.create([
   },
   {
     user_id: 1,
-    file_name: "puzzle-piece-solid",
+    file_name: "at-solid",
     file_type: "svg",
-    description: "Projects",
-    container_order: 2,
+    description: "Links",
+    container_order: 4,
   },
   {
     user_id: 1,
@@ -70,7 +70,7 @@ NavigationLink.create([
   },
   {
     user_id: 1,
-    file_name: "linkedin",
+    file_name: "linkedin-in",
     file_type: "svg",
     description: "LinkedIn",
     container_order: 2,
@@ -98,7 +98,7 @@ NavigationLink.create([
     file_type: "svg",
     description: "Summary",
     container_order: 1,
-    parent_id: 3,
+    parent_id: 2,
   },
   {
     user_id: 1,
@@ -113,8 +113,8 @@ NavigationLink.create([
     file_name: "clipboard-user_id-solid",
     file_type: "svg",
     description: "Resume",
-    container_order: 1,
-    parent_id: 4,
+    container_order: 0,
+    parent_id: 2,
   }
 
 

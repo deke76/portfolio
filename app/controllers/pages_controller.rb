@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
   def index
-    links = NavigationLink.all
-    puts links.select { |link| !link.parent_id }
-    @navigation_links = NavigationLink.all
+    user = 1
+    @navigation_links = NavigationLink.nav_links(user)
   end
 end

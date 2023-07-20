@@ -1,5 +1,5 @@
 <header class='navbar'>
-    <% @navigation_links.each do |link| %>  
+    <% links.each do |link| %>  
       <div class='navlink'>
         <%= link_to links_path do %>
           <%= embedded_svg(link.file) %>
