@@ -5,14 +5,13 @@
 @import "mixins/skew";
 
 // Configuration
-// @import "config/variables";
+@import "config/variables";
 @import "config/reset";
 
 // Components
-@import "components/navbar";
-@import "components/navlink";
-@import "components/link-container";
+// @import "components/navbar";
+@import "components/link_new";
+// @import "components/link-container";
 
 // Layouts
-@import "layouts/container";
-@import "layouts/navigation";
+@import "layouts/container_new";

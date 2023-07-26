@@ -1,9 +1,0 @@
-.link-container {
-  width: 100px;
-  height: 60px;
-  background-color: white;
-  
-  &--right-skew {
-    @include skew($deg: -8deg,$bg: #fff);
-  }
-}

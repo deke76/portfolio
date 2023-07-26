@@ -1,4 +1,4 @@
-@mixin skew($side: right, $deg: -20deg, $right: -15px, $left: -15px, $width: 30px, $bg: none) {
+@mixin skew($side: right, $deg: -8deg, $right: -15px, $left: -15px, $width: 30px, $bg: none) {
   position: relative;
 
   &::before {

@@ -1,2 +1,11 @@
-<div class="container">
-</div>
+<turbo-frame id="links_links" target="_top">
+  <div class="container__content__links">
+    <div class="container__content__links__background">
+      <% @links.each do |link|> %>
+        <div class="link__page">
+          <%= embedded_svg(link.file) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</turbo-frame>

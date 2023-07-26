@@ -16,7 +16,8 @@ class NavigationLink < ApplicationRecord
     }
     
     links[:navbar].each { |nav_link|
-      links[nav_link.description] = user_links.select { 
+      links[:page_links] ||= {}
+      links[:page_links][nav_link.description] ||= user_links.select { 
         |link| link[:parent_id] == nav_link.id
       }
     }
