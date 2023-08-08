@@ -2,7 +2,6 @@
 
 // Mixins
 @import "mixins/media";
-@import "mixins/skew";
 
 // Configuration
 @import "config/variables";
@@ -10,8 +9,8 @@
 
 // Components
 // @import "components/navbar";
-@import "components/link_new";
+@import "components/link";
 // @import "components/link-container";
 
 // Layouts
-@import "layouts/container_new";
+@import "layouts/container";

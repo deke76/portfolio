@@ -11,8 +11,8 @@ class NavigationLink < ApplicationRecord
     user_links = self.where(user_id: user)
     links = {
       :navbar => user_links
-                     .sort_by { |link| link.container_order }
-                     .select { |link| !link.parent_id }
+                 .sort_by { |link| link.container_order }
+                 .select { |link| !link.parent_id }
     }
     
     links[:navbar].each { |nav_link|
@@ -22,5 +22,9 @@ class NavigationLink < ApplicationRecord
       }
     }
     return links
+  end
+
+  def self.page_links(user)
+    self.nav_links(user)[:page_links]
   end
 end

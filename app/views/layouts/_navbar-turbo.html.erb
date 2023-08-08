@@ -1,0 +1,13 @@
+<nav class='container__nav'>
+  <% links.each do |link| %>
+    <%= turbo_frame_tag get_turbo_links_frame_name(link.description), loading: 'eager' do %>
+      <div class='container__nav__link'>
+        <%= link_to page_path(link.description),
+              data: { turbo_frame: get_turbo_frame_name(link.description) },
+              class: "link__nav" do %>
+            <%= embedded_svg(link.file) %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</nav>

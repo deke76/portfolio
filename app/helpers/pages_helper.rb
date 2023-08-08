@@ -1,37 +1,39 @@
 module PagesHelper
-  def get_num_of_links(link_array)
-    number_of_links = 0
-    link_array.each_value do |link|
-      if link.length > number_of_links
-        number_of_links = link.length
-      end
-    end
-    number_of_links
+
+  def get_offset_distance(height, skew_x)
+    radians = skew_x * Math::PI / 180
+    offset = Math.tan(radians)
+    offset_distance = height * offset
   end
 
-  def get_offset_percentage(index, offset_degrees, side)
-    if side == 'right'
-      index = 4 - index
-    end
-    offset_radians = offset_degrees.to_f * Math::PI / 180.0
-    offset_percentage = (index + 1) / Math.tan(offset_radians)
-    width = 90 + offset_percentage
-    return "width: #{width}%;"
+  def get_container_height(container, total_containers)
+    middle = total_containers / 2
+    height = (middle - container) * 40
   end
 
-  def get_container_widths(num_of_containers, offset_degrees, side)
-    container_widths = []
-    offset_radians = offset_degrees.to_f * Math::PI / 180.0
-    puts "offset_radians: #{offset_radians}"
-    (1..num_of_containers).each do |index|
-      if side == 'right'
-        index = num_of_containers - index + 1
-      end
-      offset_percentage = index / Math.tan(offset_radians)
-      container_widths.push(90 + offset_percentage)
+  def get_container_width(height, offset_distance)
+
+  end
+
+  def get_container_position(container_pos, total_containers, skew_x)
+    right = container_pos.even?
+    left = "left: 5vw"
+
+    if right
+      height = get_container_height(container_pos, total_containers) - 10
+      offset_distance = "#{get_offset_distance(height/2, skew_x)}vh"
+      left_calc = "calc(55vw + #{offset_distance})"
+      left = "left: #{left_calc}"
+      width = "width: calc(95vw - #{left_calc})"
+      padding = "padding-left: 1vw"
+    else
+      height = get_container_height(container_pos, total_containers) + 10
+      puts "adjust width at height: #{height/2} by #{get_offset_distance(height/2, skew_x)}vh"
+      offset_distance = "#{get_offset_distance(height/2, skew_x)}vh"
+      width = "width: calc(40vw + #{offset_distance})"
+      padding = "padding-right: 1vw"
     end
-    puts "#{side} container widths: #{container_widths.inspect}"
-    container_widths
+    style = "#{left}; #{width}; #{padding}"
   end
 
 end

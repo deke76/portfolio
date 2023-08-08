@@ -102,7 +102,7 @@ NavigationLink.create([
   },
   {
     user_id: 1,
-    file_name: "id-badge-solid",
+    file_name: "clipboard-check-solid",
     file_type: "svg",
     description: "Contact Form",
     container_order: 1,
@@ -110,7 +110,7 @@ NavigationLink.create([
   },
   {
     user_id: 1,
-    file_name: "clipboard-user_id-solid",
+    file_name: "clipboard-user-solid",
     file_type: "svg",
     description: "Resume",
     container_order: 0,
