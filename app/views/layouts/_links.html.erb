@@ -2,7 +2,7 @@
 <% links[:navbar].each_with_index do |nav_link, index| %>
   <% description = convert_title_to_snake_case nav_link.description %>
   <div 
-    class="container__page__<%= description %>"
+    class="container__page"
     style="<%= get_container_position(index, links[:navbar].length(), 5) %>" id="<%= description %>__container">
     <% links[:page_links][nav_link.description].each do |link| %>
       <div class="link__page">

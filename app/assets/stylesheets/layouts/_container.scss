@@ -67,3 +67,30 @@
     }
   }
 }
+
+#settings__container {
+  position: absolute;
+  top: 5vh;
+}
+
+#about_me__container {
+  position: absolute;
+  flex-direction: row-reverse;
+  top: 25vh;
+}
+
+#projects__container {
+  position: absolute;
+  top: 45vh;
+}
+
+#contact_me__container {
+  position: absolute;
+  flex-direction: row-reverse;
+  top: 65vh;
+}
+
+#links__container {
+  position: absolute;
+  top: 85vh;
+}
