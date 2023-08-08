@@ -28,7 +28,6 @@ module PagesHelper
       padding = "padding-left: 1vw"
     else
       height = get_container_height(container_pos, total_containers) + 10
-      puts "adjust width at height: #{height/2} by #{get_offset_distance(height/2, skew_x)}vh"
       offset_distance = "#{get_offset_distance(height/2, skew_x)}vh"
       width = "width: calc(40vw + #{offset_distance})"
       padding = "padding-right: 1vw"

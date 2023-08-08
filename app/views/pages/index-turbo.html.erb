@@ -1,8 +1,0 @@
-<main class="container">
-  <%= render "layouts/navbar", links: @navigation_links[:navbar] %>
-  <% @navigation_links[:navbar].each do |nav_link| %>
-    <% frame_name = get_turbo_frame_name nav_link.description %>
-    <%= turbo_frame_tag frame_name do %>
-    <% end %>
-  <% end %>
-</main>

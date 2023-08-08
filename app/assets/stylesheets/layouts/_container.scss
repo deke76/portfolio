@@ -33,38 +33,6 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
-    &__settings {
-      @extend .container__page;
-      position: absolute;
-      top: 5vh;
-    }
-
-    &__about_me {
-      @extend .container__page;
-      position: absolute;
-      flex-direction: row-reverse;
-      top: 25vh;
-    }
-
-    &__projects {
-      @extend .container__page;
-      position: absolute;
-      top: 45vh;
-    }
-
-    &__contact_me {
-      @extend .container__page;
-      position: absolute;
-      flex-direction: row-reverse;
-      top: 65vh;
-    }
-
-    &__links {
-      @extend .container__page;
-      position: absolute;
-      top: 85vh;
-    }
   }
 }
 
