@@ -16,13 +16,21 @@
     align-content: center;
     transform: skewX(-5deg);
     position: absolute;
-    left: 45vw;
-    
+    left: 45vw;  
+    transition: left 0.5s;  
 
     &__link {
       width: 100%;
       display: flex;
       justify-content: center;
+    }
+
+    &__top {
+      left: 5vw;
+    }
+
+    &__bottom {
+      left: 85vw;
     }
   }
 
@@ -33,6 +41,33 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+
+    &__top {
+      height: 10vh;
+      background-color: white;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+      left: calc(15vw + 3.0621032234073398vh);
+      width: calc(100vw - calc(15vw + 3.0621032234073398vh));
+      top: 5vh;
+    }
+    
+    &__bottom {
+      height: 10vh;
+      background-color: white;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+      left: 0vw;
+      width: calc(85vw - 3.0621032234073398vh);
+      bottom: 5vh;
+      transition: all 1s;
+    }
   }
 }
 

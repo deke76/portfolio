@@ -11,12 +11,7 @@ module PagesHelper
     height = (middle - container) * 40
   end
 
-  def get_container_width(height, offset_distance)
-
-  end
-
-  def get_container_position(container_pos, total_containers, skew_x)
-    right = container_pos.even?
+  def get_container_position(container_pos, total_containers, skew_x, right)
     left = "left: 5vw"
 
     if right
@@ -33,6 +28,10 @@ module PagesHelper
       padding = "padding-right: 1vw"
     end
     style = "#{left}; #{width}; #{padding}"
+  end
+
+  def get_navbar_position(position)
+    class_name = position.nil? ? "" : "container__nav__#{position}"
   end
 
 end

@@ -1,11 +1,9 @@
-<% description = @links.keys()[0] %>
-  <%= turbo_frame_tag get_turbo_frame_name description do %>
-    <% puts "page_path(description): #{page_path(description)}" %>
-    <div class="container__page__<%= convert_title_to_snake_case description %>">
-        <% @links[description].each do |link| %>
-          <div class="link__page">
-            <%= embedded_svg(link.file) %>
-          </div>
-        <% end %>
+<% puts @position %>
+<%= render "layouts/navbar", links: @navigation_links[:navbar] %>
+<div class="container__page__<%= @position %>">
+  <% @navigation_links[:page_links][params[:id]].each do |link| %>
+    <div class="link__page">
+      <%= embedded_svg(link.file) %>
     </div>
   <% end %>
+</div>

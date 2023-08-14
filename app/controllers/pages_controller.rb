@@ -6,8 +6,18 @@ class PagesController < ApplicationController
 
   def show
     user = 1
-    user_links = NavigationLink.page_links(user)
-    description = helpers.convert_snake_to_title_case params[:id]
-    @links = { description => user_links[description] }
+    nav_links = NavigationLink.nav_links(user)
+    index = nav_links[:navbar].find_index {
+      |link| link.description == params[:id]
+    }
+    current_page = nav_links[:navbar].slice!(index)
+    if index.even?
+      nav_links[:navbar].unshift(current_page)
+    else
+      nav_links[:navbar].push(current_page)
+    end
+    @navigation_links = nav_links
+    puts "index: #{index}"
+    @position = index.even? ? "top" : "bottom"
   end
 end
