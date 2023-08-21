@@ -6,6 +6,10 @@
   flex-direction: column;
   justify-content: space-evenly;
 
+  &__skew {
+    transform: skewX(-5deg);
+  }
+
   &__nav {
     height: 100vh;
     width: 10vw;
@@ -14,10 +18,9 @@
     flex-direction: column;
     justify-content: space-around;
     align-content: center;
-    transform: skewX(-5deg);
     position: absolute;
     left: 45vw;  
-    transition: left 0.5s;  
+    transition: all 0.75s;  
 
     &__link {
       width: 100%;
@@ -31,6 +34,20 @@
 
     &__bottom {
       left: 85vw;
+    }
+
+    &__left {
+      height: 95vh;
+      left: 0vw;
+      padding: 2.5vh 0;
+      justify-content: space-between;
+    }
+
+    &__right {
+      height: 95vh;
+      left: 90vw;
+      padding: 2.5vh 0;
+      justify-content: space-between;
     }
   }
 
@@ -66,10 +83,48 @@
       left: 0vw;
       width: calc(85vw - 3.0621032234073398vh);
       bottom: 5vh;
-      transition: all 1s;
+      transition: all 0.5s;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    height: 90vh;
+    width: 90vw;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+
+    &__bottom {
+      @extend .container__link;
+      top: 0vh;
+      left: 0vh;
+    }
+
+    &__top {
+      @extend .container__link;
+      top: 10vh;
+      left: 10vw;
+    }
+  }
+
+  &__full {
+    width: 90vw;
+
+    &__bottom {
+      @extend .container__full;
+      bottom: 0vh;
+    }
+
+    &__top {
+      @extend .container__full;
+      top: 0vh;
+      left: 10vw;
     }
   }
 }
+
+
 
 #settings__container {
   position: absolute;

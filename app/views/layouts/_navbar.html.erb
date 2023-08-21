@@ -1,4 +1,4 @@
-<nav class='container__nav <%= get_navbar_position @position %>'>
+<nav class='container__nav container__skew <%= get_navbar_position @position %>'>
   <% links.each do |link| %>
     <div class='container__nav__link' id='<%= convert_title_to_snake_case link.description %>__links'>
       <%= link_to page_path(link.description),

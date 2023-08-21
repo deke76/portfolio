@@ -16,8 +16,8 @@ class PagesController < ApplicationController
     else
       nav_links[:navbar].push(current_page)
     end
+    @user = User.find(user)
     @navigation_links = nav_links
-    puts "index: #{index}"
     @position = index.even? ? "top" : "bottom"
   end
 end

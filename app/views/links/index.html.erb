@@ -1,9 +1,0 @@
-  <%= turbo_frame_tag "links_links_frame" do %>
-    <div class="container__page">
-        <% @links.each do |link| %>
-          <div class="link__page">
-            <%= embedded_svg(link.file) %>
-          </div>
-        <% end %>
-    </div>
-  <% end %>

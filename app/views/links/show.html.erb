@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "links_description_frame" do %>
+  <div class="container__link__<%= params[:position] %>">
+    <% link = convert_title_to_snake_case params[:id] %>
+    <% page = convert_title_to_snake_case params[:page] %>
+    <%= render "links/content/#{page}/#{link}" %>
+  </div>
+<% end %>

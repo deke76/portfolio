@@ -1,7 +1,8 @@
 // Entry point for the build script in your package.json
 import "@hotwired/turbo-rails"
 import "./controllers"
-import "./listeners"
+import "./navigation"
+import "./pages"
 
 import "@fortawesome/fontawesome-free/js/all";
 

@@ -1,6 +1,8 @@
 class LinksController < ApplicationController
 
-  def index
-    @links = NavigationLink.where(parent_id: 5)
+  def show
+    puts "params: #{params}"
+    @user = User.find(params[:user])
   end
+
 end

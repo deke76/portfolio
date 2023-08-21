@@ -1,9 +1,17 @@
-<% puts @position %>
 <%= render "layouts/navbar", links: @navigation_links[:navbar] %>
 <div class="container__page__<%= @position %>">
   <% @navigation_links[:page_links][params[:id]].each do |link| %>
-    <div class="link__page">
-      <%= embedded_svg(link.file) %>
-    </div>
+    <%= turbo_frame_tag "links_turbo_frame", class: "link__turbo" do %>
+      <%= link_to link_path(id: link.description, page: params[:id], user: @user, position: @position),
+                  id: get_page_link_id(link.description, params[:id], @position),
+                  class: "link__page",
+                  data: { turbo_frame: "links_description_frame" } do %>
+          <%= embedded_svg(link.file) %>
+      <% end %>  
+    <% end %>
   <% end %>
 </div>
+<%= turbo_frame_tag "links_description_frame" do %>
+<% end %>
+
+<%= javascript_include_tag "pages" %>

@@ -21,4 +21,8 @@ module LinksHelper
     description_title_case.to_s
   end
 
+  def get_page_link_id(link_name, page, position)
+    return "#{convert_title_to_snake_case link_name}_#{convert_title_to_snake_case page}_#{position}"
+  end
+
 end
