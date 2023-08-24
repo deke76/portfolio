@@ -1,0 +1,41 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgrey;
+  height: 80%;
+  width: 80%;
+  margin: 10% auto;
+
+  & table {
+    width: 80%;
+    padding: 25px;
+  }
+
+  &__title {
+    background-color: darkgrey;
+    text-align: center;
+  }
+
+  &__row {
+    height: 3em;
+  }
+
+  &__message {
+    height: 6em;
+  }
+
+  & label {
+    width: 15%;
+  }
+
+  & textarea, input {
+    height: 2em;
+    width: 100%;
+
+  }
+}
+
+#message_body {
+  height: 6em;
+}

@@ -1,0 +1,65 @@
+<%= turbo_frame_tag "links_description_frame" do %>
+  <div class="container__link__<%= params[:position] %>">
+    <%= form_with model: Message.new, class: "form" do |form| %>
+      <table>
+        <thead class="form__title">
+          <th colspan='2'>
+            Contact me
+          </th>
+        </thead>
+        <tbody>
+          <tr class='form__row'>
+            <td class='form__label'>
+              <%= form.label :first_name %>
+            </td>
+            <td>
+              <%= form.text_area :first_name%>
+            </td>
+          </tr>
+          <tr class='form__row'>
+            <td>
+              <%= form.label :name %>
+            </td>
+            <td>
+              <%= form.text_area :name %>
+            </td>
+          </tr>
+          <tr class='form__row'>
+            <td>
+              <%= form.label :email %>
+            </td>
+            <td>
+              <%= form.email_field :email %>
+            </td>
+          </tr>
+          <tr class='form__row'>
+            <td>
+              <%= form.label :phone %>
+            </td>
+            <td>
+              <%= form.telephone_field :phone %>
+            </td>
+          </tr>
+          <tr class='form__row'>
+            <td>
+              <%= form.label :subject %>
+            </td>
+            <td>
+              <%= form.text_area :subject %>
+            </td>
+          </tr>
+          <tr class='form__message'>
+            <td colspan='2'>
+              <%= form.text_area :body %>
+            </td>
+          </tr>
+          <tr>
+            <td colspan='2'>
+              <%= form.submit "Send" %>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <%= hidden_field_tag :position, params[:position] %>
+    <% end %>
+<% end %>

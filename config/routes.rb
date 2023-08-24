@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       resources :links, only: [:show], shallow: true
   end
 
+  resources :messages, only: [:new, :create]
+
   # Defines the root path route ("/")
   # root "articles#index"
   root to: "pages#index"

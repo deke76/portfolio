@@ -1,0 +1,20 @@
+.profile {
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+  &__photo {
+    height: 100%;
+    width: 25%;
+  }
+
+  &__summary {
+    height: 100%;
+    width: 75%;
+    padding: 1em;
+  }
+
+  &__button {
+    width: 3em;
+  }
+}

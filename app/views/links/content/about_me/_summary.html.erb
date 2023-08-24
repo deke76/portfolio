@@ -1,1 +1,21 @@
-<h1>Summary</h1>
+<div class="profile">
+  <%= image_tag @user.profile_photo, class: "profile__photo" %>
+  <div class="profile__summary">
+    <p>I have always been interested in programming, math and logic based problem solving which originally lead me down a technical sales path.  Originally, that was geared towards instrumentation and automation because I enjoyed the technical aspects of the process control industry.</p><br>
+    <p>Dealing with level, flow, pressure and various types of analtyical measurement required me to use some of my math and physics education to develop a basic understanding of spectroscopy, near infra-read, ultrasound, EMR, nuclear and physicalal types of measurement.  Additionally, my discussions taught me a lot about how these processes related to what how industrial businesses operated and the effect of a process on corporate profitability.</p><br>
+    <p>Like everyone else, I have ideas about things I want to create so I finally took the plunge and enrolled in <a href="http://lighthouselabs.ca">Lighthouse Labs</a> for a guided tour of web development.  A difficult 13 weeks but time I ultimately enjoyed and now I'm developing my ability to code and build projects in different languages in order to feed my creative soul.</p><br>
+    <p>Coding isn't all I do though, I have a young family with two amazing daughters and a wife that I adore.  I am a huge hockey fan (Go Flames Go) and enjoy working out and wood work.  If you want to know a little more about me feel free to have a look at my socials.</p><br>
+    <div class="container__button">
+      <div class="profile__button">
+        <%= link_to "https://twitter.com/DKLaudsie?ref_src=twsrc%5Etfw", target: "_blank" do %>
+          <%= embedded_svg("twitter.svg") %> 
+        <% end %>
+      </div>
+      <div class="profile__button">
+        <%= link_to "https://www.facebook.com/darcy.lauder.7", target: "_blank" do %>
+          <%= embedded_svg("facebook.svg") %>
+        <% end %>
+      </div>
+    </div>  
+  </div>
+<div>
