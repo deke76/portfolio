@@ -1,0 +1,14 @@
+<%= turbo_frame_tag "links_description_frame" do %>
+  <div class="container__link__<%= params[:position] %>">
+    <div id="projects" class="projects">
+      <% @projects.each do |project| %>
+        <div class="projects__card">
+          <%= render project %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%= link_to "New project", new_project_path %>
+
+<% end %>
