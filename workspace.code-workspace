@@ -1,11 +1,8 @@
 {
 	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "../quote-editor"
-		}
-	],
+    {
+      "path": "../quote-editor"
+    }
+  ],
   "settings": {}
 }
