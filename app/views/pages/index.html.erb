@@ -1,4 +1,7 @@
 <main class="container">
   <%= render "layouts/navbar", links: @navigation_links[:navbar] %>
   <%= render "layouts/links", links: @navigation_links %>
+
+  <%= turbo_frame_tag "links_description_frame" do %>
+  <% end %>
 </main>

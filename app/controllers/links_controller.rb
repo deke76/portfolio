@@ -12,8 +12,6 @@ class LinksController < ApplicationController
   end
 
   def check_for_projects
-    puts "go to the projects controller"
-    puts "LinkController => params: #{params}"
     redirect_to projects_path :position => params[:position]
   end
 

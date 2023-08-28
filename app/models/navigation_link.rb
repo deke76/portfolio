@@ -27,4 +27,5 @@ class NavigationLink < ApplicationRecord
   def self.page_links(user)
     self.nav_links(user)[:page_links]
   end
+
 end

@@ -44,10 +44,7 @@
     }
 
     &__right {
-      height: 95vh;
       left: 90vw;
-      padding: 2.5vh 0;
-      justify-content: space-between;
     }
   }
 
@@ -135,7 +132,7 @@
   top: 5vh;
 }
 
-#about_me__container {
+#details__container {
   position: absolute;
   flex-direction: row-reverse;
   top: 25vh;
@@ -146,7 +143,7 @@
   top: 45vh;
 }
 
-#contact_me__container {
+#contacts__container {
   position: absolute;
   flex-direction: row-reverse;
   top: 65vh;

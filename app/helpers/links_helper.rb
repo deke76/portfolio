@@ -1,13 +1,5 @@
 module LinksHelper
 
-  def convert_title_to_snake_case(title_case)
-    title_case.gsub(" ", "_").downcase
-  end
-
-  def convert_snake_to_title_case(snake_case)
-    snake_case.gsub("_", " ").titleize
-  end
-
   def get_turbo_frame_name(frame_name)
     convert_title_to_snake_case(frame_name) + "_frame"
   end

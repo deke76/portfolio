@@ -1,10 +1,14 @@
 <nav class='container__nav container__skew <%= get_navbar_position @position %>'>
   <% links.each do |link| %>
-    <div class='container__nav__link' id='<%= convert_title_to_snake_case link.description %>__links'>
-      <%= link_to page_path(link.description),
-        class: "link__nav" do %>
-          <%= embedded_svg(link.file) %>
+    <% controller = convert_title_to_snake_case link.description %>
+    <%= turbo_frame_tag "pages_turbo_frame" do %>
+      <div class='container__nav__link' id='<%= controller %>__links'>
+      <%= link_to send("#{controller}_path"),
+            data: { turbo_frame: "links_description_frame"},
+            class: "link__nav" do %>
+            <%= embedded_svg(link.file) %>
       <% end %>
-    </div>
+      </div>
+    <% end %>
   <% end %>
 </nav>

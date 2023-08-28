@@ -1,6 +1,9 @@
-<div id="<%= dom_id project %>" class="projects__card__header">
+<div class="projects__card__header">
   <%= project.name %>
 </div>
 <div class="projects__card__body">
+  <%= project.description %>
+</div>
+<div class="projects__card__footer">
   <%= link_to "Show this project", project %>
 </div>

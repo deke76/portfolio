@@ -57,8 +57,14 @@ gem "font-awesome-sass", "~> 6.4.0"
 # Work with XML & HTML files
 gem 'nokogiri', '~> 1.15', '>= 1.15.3'
 
+# Work with JSON files
+gem 'json', '~> 2.6', '>= 2.6.3'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
+
+# Make external http calls
+gem 'rest-client', '~> 2.1'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
